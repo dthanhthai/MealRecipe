@@ -8,7 +8,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'MealRecipe',
@@ -32,17 +31,22 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
 //      home: CategoriesScreen(),
-    initialRoute: '/',
+      initialRoute: '/',
       routes: {
         '/': (ctx) => CategoriesScreen(),
         CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
         MealDetailScreen.routeName: (ctx) => MealDetailScreen()
       },
+//      onGenerateRoute: (settings) {
+//        print(settings.arguments);
+//        return MaterialPageRoute(builder: (ctx) => CategoriesScreen());
+//      },
+//      onUnknownRoute:(settings) {
+//        return MaterialPageRoute(builder: (ctx) => CategoriesScreen());
+//      } ,
     );
   }
 }
-
-
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
